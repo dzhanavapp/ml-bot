@@ -115,6 +115,7 @@ export default {
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr max-content;
+  position: relative;
 }
 
 .message-section {
@@ -129,10 +130,16 @@ export default {
   justify-content: flex-end;
   min-height: 100%;
   width: 100%;
+  padding-bottom: 170px;
 }
 
 .form {
+  background: white;
+  width: calc(100% - 40px);
+  left: 20px;
+  bottom: 0;
   padding-top: 12px;
+  position: fixed;
   display: flex;
   flex-direction: column;
 }
