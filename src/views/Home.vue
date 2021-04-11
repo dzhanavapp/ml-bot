@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div v-else class="message-wrapper mb-16">
+      <div v-else class="message-wrapper">
         <div>Нет сообщений</div>
       </div>
     </main>
@@ -110,6 +110,16 @@ export default {
 </script>
 
 <style>
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
 .grid {
   height: 100vh;
   overflow: hidden;
@@ -118,7 +128,14 @@ export default {
   position: relative;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .grid {
+    height: -webkit-fill-available !important;
+  }
+}
+
 .message-section {
+  padding-top: 20px;
   overflow: auto;
   margin-right: -30px;
   padding-right: 30px;
@@ -131,16 +148,6 @@ export default {
   min-height: 100%;
   width: 100%;
   padding-bottom: 170px;
-}
-
-.form {
-  background: white;
-  width: calc(100% - 40px);
-  left: 20px;
-  bottom: 0;
-  padding-top: 12px;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 </style>

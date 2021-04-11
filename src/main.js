@@ -6,7 +6,7 @@ import VueChatScroll from "vue-chat-scroll";
 import axios from "axios";
 
 Vue.prototype.$axios = axios.create({
-  baseURL: "https://curly-duck-4.loca.lt/bot/",
+  baseURL: "https://pretty-yak-71.loca.lt/bot/",
 });
 
 Vue.use(VueChatScroll);
